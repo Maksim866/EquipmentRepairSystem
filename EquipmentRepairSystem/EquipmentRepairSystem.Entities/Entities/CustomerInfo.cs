@@ -1,11 +1,11 @@
-
+using EquipmentRepairSystem.Dal.Contracts;
 
 namespace EquipmentRepairSystem.Entities
 {
     /// <summary>
     /// Информация о заказчике
     /// </summary>
-    public class CustomerInfo
+    public class CustomerInfo : BaseAuditEntity
     {
         /// <summary>
         /// Имя заказчика

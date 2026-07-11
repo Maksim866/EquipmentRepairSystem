@@ -1,10 +1,12 @@
+using EquipmentRepairSystem.Dal.Contracts;
+
 namespace EquipmentRepairSystem.Entities
 {
 
     /// <summary>
     /// Реквизиты договора
     /// </summary>
-    public class ContractDetail
+    public class ContractDetail : BaseAuditEntity
     {
         /// <summary>
         /// Номер договора
