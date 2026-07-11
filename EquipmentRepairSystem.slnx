@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/DataAccessLayer/">
+    <Project Path="EquipmentRepairSystem/DataAccessLayer/EquipmentRepairSystem.Dal.Contracts/EquipmentRepairSystem.Dal.Contracts.csproj" Id="4b2e04d6-d8a0-4c34-8d37-9cfb99a24b0c" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
