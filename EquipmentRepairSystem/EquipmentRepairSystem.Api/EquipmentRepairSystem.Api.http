@@ -1,0 +1,6 @@
+@EquipmentRepairSystem.Api_HostAddress = http://localhost:5170
+
+GET {{EquipmentRepairSystem.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
