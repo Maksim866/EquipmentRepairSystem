@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
   <Project Path="EquipmentRepairSystem/EquipmentRepairSystem.Api/EquipmentRepairSystem.Api.csproj" Id="d3564d09-af29-4185-b31a-74375523cef2" />
+  <Project Path="EquipmentRepairSystem/EquipmentRepairSystem.Entities/EquipmentRepairSystem.Entities.csproj" Id="9662daf8-af3a-481b-b223-125bacce6a92" />
 </Solution>
