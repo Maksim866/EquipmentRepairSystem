@@ -1,10 +1,13 @@
 <Solution>
   <Folder Name="/DataAccessLayer/">
+    <Project Path="EquipmentRepairSystem/DataAccessLayer/EquipmentRepairSystem.Context.EntityFrameworkCore/EquipmentRepairSystem.Context.EntityFrameworkCore.csproj" Id="f4de855b-237b-46d0-aee9-5f7b6de79f9b" />
+    <Project Path="EquipmentRepairSystem/DataAccessLayer/EquipmentRepairSystem.Context/EquipmentRepairSystem.Context.csproj" Id="9914e38e-b88c-432d-bb4b-f4d33622da8d" />
     <Project Path="EquipmentRepairSystem/DataAccessLayer/EquipmentRepairSystem.Dal.Contracts/EquipmentRepairSystem.Dal.Contracts.csproj" Id="4b2e04d6-d8a0-4c34-8d37-9cfb99a24b0c" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
   <Project Path="EquipmentRepairSystem/EquipmentRepairSystem.Api/EquipmentRepairSystem.Api.csproj" Id="d3564d09-af29-4185-b31a-74375523cef2" />
+  <Project Path="EquipmentRepairSystem/EquipmentRepairSystem.Entities.Configurations/EquipmentRepairSystem.Entities.Configurations.csproj" Id="822e2a52-26fc-4026-9b71-c4895a91aed4" />
   <Project Path="EquipmentRepairSystem/EquipmentRepairSystem.Entities/EquipmentRepairSystem.Entities.csproj" Id="9662daf8-af3a-481b-b223-125bacce6a92" />
 </Solution>

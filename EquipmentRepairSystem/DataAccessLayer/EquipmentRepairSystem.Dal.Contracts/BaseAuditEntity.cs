@@ -9,7 +9,11 @@ namespace EquipmentRepairSystem.Dal.Contracts
         IEntityAuditCreated,
         IEntityAuditUpdated,
         IEntityAuditDeletedAt,
-        IEntityWithId
+        IEntityWithId,
+        IEntityWithCustomer,
+        IEntityWithEquipment,
+        IEntityWithReceiver
+
     {
         /// <summary>
         /// Идентификатор
@@ -40,5 +44,20 @@ namespace EquipmentRepairSystem.Dal.Contracts
         /// Дата удаления
         /// </summary>
         public DateTimeOffset? DeletedAt { get; set; }
+
+        /// <summary>
+        /// Идентификатор заказчика
+        /// </summary>
+        public Guid CustomerId { get; set; }
+
+        /// <summary>
+        /// Идентификатор оборудования
+        /// </summary>
+        public Guid EquipmentId { get; set; }
+
+        /// <summary>
+        /// Идентификатор получателя
+        /// </summary>
+        public Guid ReceiverId { get; set; }
     }
 }
