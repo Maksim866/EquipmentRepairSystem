@@ -9,12 +9,27 @@ namespace EquipmentRepairSystem.Entities
     {
 
         /// <summary>
-        /// ФИО сотрудника (или название компании) принимающей стороны 
+        /// Имя приёмщика
         /// </summary>
-        public string Name { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Телефон получателя
+        /// Фамилия приёмщика
+        /// </summary>
+        public string LastName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Отчество приёмщика (при наличии)
+        /// </summary>
+        public string MiddleName { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Должность приёмщика
+        /// </summary>
+        public string Position { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Телефон приёмщика
         /// </summary>
         public string Phone { get; set; } = string.Empty;
 

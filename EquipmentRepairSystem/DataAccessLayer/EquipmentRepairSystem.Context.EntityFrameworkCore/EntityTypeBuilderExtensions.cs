@@ -31,10 +31,6 @@ namespace EquipmentRepairSystem.Context.EntityFrameworkCore
             builder.Property(c => c.UpdatedBy).HasMaxLength(50);
 
             builder.Property(c => c.DeletedAt);
-
-            builder.HasIndex(c => c.CustomerId);
-            builder.HasIndex(c => c.EquipmentId);
-            builder.HasIndex(c => c.ReceiverId);
         }
     }
 }

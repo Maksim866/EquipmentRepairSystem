@@ -19,9 +19,22 @@ namespace EquipmentRepairSystem.Entities.Configurations
             builder.HasIdAsKey();
             builder.ConfigureBaseAuditEntity();
 
-            builder.Property(c => c.Name)
+            builder.Property(c => c.CustomerType)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasConversion<string>()
+                .HasMaxLength(30);
+
+            builder.Property(c => c.CompanyName)
+                .HasMaxLength(30);
+
+            builder.Property(c => c.FirstName)
+                .HasMaxLength(30);
+
+            builder.Property(c => c.MiddleName)
+                .HasMaxLength(30);
+
+            builder.Property(c => c.LastName)
+                .HasMaxLength(30);
 
             builder.Property(c => c.Phone)
                 .IsRequired()
@@ -34,6 +47,8 @@ namespace EquipmentRepairSystem.Entities.Configurations
             builder.Property(c => c.DeliveredBy)
                 .IsRequired()
                 .HasMaxLength(20);
+
+            builder.HasIndex(c => c.Phone);
         }
     }
 }

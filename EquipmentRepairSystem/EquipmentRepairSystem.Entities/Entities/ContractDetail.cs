@@ -11,11 +11,37 @@ namespace EquipmentRepairSystem.Entities
         /// <summary>
         /// Номер договора
         /// </summary>
-        public string Number { get; set; } = string.Empty;
+        public string ContractNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// Дата договора (день, месяц, год)
         /// </summary>
-        public DateTimeOffset Date { get; set; }
+        public DateTimeOffset ContractDate { get; set; }
+
+        /// <summary>
+        /// Внешний ключ на заказчика
+        /// </summary>
+        public Guid CustomerId { get; set; }
+
+        /// <summary>
+        /// Навигационное свойство на заказчика
+        /// </summary>
+        public CustomerInfo? Customer { get; set; }
+
+        /// <summary>
+        /// Внешний ключ на приёмщика
+        /// </summary>
+        public Guid ReceiverId { get; set; }
+
+        /// <summary>
+        /// Навигационное свойство на приёмщика
+        /// </summary>
+        public ReceiverInfo? Receiver { get; set; }
+
+        /// <summary>
+        /// Табличная часть оборудования, переданного по данному договору
+        /// </summary>
+        public ICollection<ContractEquiomentItem> ContractEquiomentItems { get; set; } =
+                new List<ContractEquiomentItem>();
     }
 }
