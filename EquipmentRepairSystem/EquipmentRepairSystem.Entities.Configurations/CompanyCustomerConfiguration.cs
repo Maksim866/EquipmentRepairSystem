@@ -1,0 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace EquipmentRepairSystem.Entities.Configurations;
+
+public class CompanyCustomerConfiguration : IEntityTypeConfiguration<CompanyCustomer>
+{
+    public void Configure(EntityTypeBuilder<CompanyCustomer> builder)
+    {
+        builder.ToTable("CompanyCustomers");
+
+        builder.HasKey(co => co.CustomerId);
+
+        builder.Property(co => co.CompanyName)
+            .IsRequired()
+            .HasMaxLength(200);
+
+        builder.HasIndex(co => co.CompanyName)
+            .HasDatabaseName("IX_CompanyCustomer_CompanyName");
+    }
+}

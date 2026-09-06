@@ -4,7 +4,7 @@ namespace EquipmentRepairSystem.Entities;
 
 /// <summary>
 /// Промежточная сущность для хранения перечня оборудования
-public class ContractEquiomentItem : BaseAuditEntity
+public class ContractEquipmentItem : BaseAuditEntity
 {
     /// <summary>
     /// Порядковый номер строки перечня

@@ -1,54 +1,50 @@
+using EquipmentRepairSystem.Context.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using EquipmentRepairSystem.Context.EntityFrameworkCore;
 
-namespace EquipmentRepairSystem.Entities.Configurations
+namespace EquipmentRepairSystem.Entities.Configurations;
+
+/// <summary>
+/// Конфигурация сущности CustomerInfo для Entity Framework Core
+/// </summary>
+public class CustomerInfoConfiguration : IEntityTypeConfiguration<CustomerInfo>
 {
     /// <summary>
-    /// Конфигурация сущности CustomerInfo для Entity Framework Core
+    /// Конфигурирует сущность CustomerInfo для Entity Framework Core
     /// </summary>
-    public class CustomerInfoConfiguration : IEntityTypeConfiguration<CustomerInfo>
+    public void Configure(EntityTypeBuilder<CustomerInfo> builder)
     {
-        /// <summary>
-        /// Конфигурирует сущность CustomerInfo для Entity Framework Core
-        /// </summary>
-        public void Configure(EntityTypeBuilder<CustomerInfo> builder)
-        {
-            builder.ToTable("CustomerInfo");
+        builder.ToTable("CustomerInfo");
 
-            builder.HasIdAsKey();
-            builder.ConfigureBaseAuditEntity();
+        builder.HasIdAsKey();
+        builder.ConfigureBaseAuditEntity();
 
-            builder.Property(c => c.CustomerType)
-                .IsRequired()
-                .HasConversion<string>()
-                .HasMaxLength(30);
+        builder.Property(c => c.Phone)
+            .IsRequired()
+            .HasMaxLength(20);
 
-            builder.Property(c => c.CompanyName)
-                .HasMaxLength(30);
+        builder.Property(c => c.MalfunctionDescription)
+            .IsRequired()
+            .HasMaxLength(500);
 
-            builder.Property(c => c.FirstName)
-                .HasMaxLength(30);
+        builder.Property(c => c.DeliveredBy)
+            .IsRequired()
+            .HasMaxLength(20);
 
-            builder.Property(c => c.MiddleName)
-                .HasMaxLength(30);
+        builder.HasIndex(c => c.Phone)
+            .HasDatabaseName("IX_CustomerInfo_Phone");
 
-            builder.Property(c => c.LastName)
-                .HasMaxLength(30);
+        builder.HasIndex(c => c.DeliveredBy)
+            .HasDatabaseName("IX_CustomerInfo_DeliveredBy");
 
-            builder.Property(c => c.Phone)
-                .IsRequired()
-                .HasMaxLength(20);
+        builder.HasOne(c => c.IndividualDetails)
+            .WithOne(i => i.CustomerInfo)
+            .HasForeignKey<IndividualCustomer>(i => i.CustomerId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Property(c => c.MalfunctionDescription)
-                .IsRequired()
-                .HasMaxLength(500);
-
-            builder.Property(c => c.DeliveredBy)
-                .IsRequired()
-                .HasMaxLength(20);
-
-            builder.HasIndex(c => c.Phone);
-        }
+        builder.HasOne(c => c.CompanyDetails)
+            .WithOne(co => co.CustomerInfo)
+            .HasForeignKey<CompanyCustomer>(co => co.CustomerId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
