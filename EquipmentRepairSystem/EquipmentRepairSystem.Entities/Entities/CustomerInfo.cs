@@ -1,31 +1,35 @@
 using EquipmentRepairSystem.Dal.Contracts;
 
-namespace EquipmentRepairSystem.Entities
+namespace EquipmentRepairSystem.Entities;
+
+/// <summary>
+/// Информация о заказчике
+/// </summary>
+public class CustomerInfo : BaseAuditEntity
 {
     /// <summary>
-    /// Информация о заказчике
+    /// Телефон заказчика
     /// </summary>
-    public class CustomerInfo : BaseAuditEntity
-    {
-        /// <summary>
-        /// Имя заказчика
-        /// </summary>
-        public string Name { get; set; } = string.Empty;
+    public string Phone { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Телефон заказчика
-        /// </summary>
-        public string Phone { get; set; } = string.Empty;
+    /// <summary>
+    /// Описание неисправности со слов заказчика
+    /// </summary>
+    public string MalfunctionDescription { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Описание неисправности со слов заказчика
-        /// </summary>
-        public string MalfunctionDescription { get; set; } = string.Empty;
+    /// <summary>
+    /// Имя лица, доставившего оборудование
+    /// </summary>
+    public string DeliveredBy { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Имя лица, доставившего оборудование
-        /// </summary>
-        public string DeliveredBy { get; set; } = string.Empty;
+    /// <summary>
+    /// Связь с сущностью IndividualCustomer
+    /// </summary>
+    public IndividualCustomer? IndividualDetails { get; set; }
 
-    }
+    /// <summary>
+    /// Связь с сущностью CompanyCustomer
+    /// </summary>
+    public CompanyCustomer? CompanyDetails { get; set; }
+
 }

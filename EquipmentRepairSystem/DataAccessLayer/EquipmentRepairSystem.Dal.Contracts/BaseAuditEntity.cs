@@ -10,6 +10,7 @@ namespace EquipmentRepairSystem.Dal.Contracts
         IEntityAuditUpdated,
         IEntityAuditDeletedAt,
         IEntityWithId
+
     {
         /// <summary>
         /// Идентификатор

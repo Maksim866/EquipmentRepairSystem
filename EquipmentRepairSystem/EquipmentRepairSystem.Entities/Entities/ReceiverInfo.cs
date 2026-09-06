@@ -1,22 +1,36 @@
 using EquipmentRepairSystem.Dal.Contracts;
 
-namespace EquipmentRepairSystem.Entities
+namespace EquipmentRepairSystem.Entities;
+
+/// <summary>
+/// Информация о получателе
+/// </summary>
+public class ReceiverInfo : BaseAuditEntity
 {
+
     /// <summary>
-    /// Информация о получателе
+    /// Имя приёмщика
     /// </summary>
-    public class ReceiverInfo : BaseAuditEntity
-    {
+    public string FirstName { get; set; } = string.Empty;
 
-        /// <summary>
-        /// ФИО сотрудника (или название компании) принимающей стороны 
-        /// </summary>
-        public string Name { get; set; } = string.Empty;
+    /// <summary>
+    /// Фамилия приёмщика
+    /// </summary>
+    public string LastName { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Телефон получателя
-        /// </summary>
-        public string Phone { get; set; } = string.Empty;
+    /// <summary>
+    /// Отчество приёмщика (при наличии)
+    /// </summary>
+    public string MiddleName { get; set; } = string.Empty;
 
-    }
+    /// <summary>
+    /// Должность приёмщика
+    /// </summary>
+    public string ReceiverPosition { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Телефон приёмщика
+    /// </summary>
+    public string ReceiverPhone { get; set; } = string.Empty;
+
 }
