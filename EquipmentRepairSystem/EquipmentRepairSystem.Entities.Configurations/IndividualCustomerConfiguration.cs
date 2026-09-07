@@ -7,16 +7,10 @@ public class IndividualCustomerConfiguration : IEntityTypeConfiguration<Individu
 {
     public void Configure(EntityTypeBuilder<IndividualCustomer> builder)
     {
-        builder.ToTable("IndividualCustomers");
-
-        builder.HasKey(i => i.CustomerId);
-
         builder.Property(i => i.FirstName)
-            .IsRequired()
             .HasMaxLength(50);
 
         builder.Property(i => i.LastName)
-            .IsRequired()
             .HasMaxLength(50);
 
         builder.Property(i => i.MiddleName)

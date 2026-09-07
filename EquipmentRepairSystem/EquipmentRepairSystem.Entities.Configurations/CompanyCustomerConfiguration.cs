@@ -7,12 +7,7 @@ public class CompanyCustomerConfiguration : IEntityTypeConfiguration<CompanyCust
 {
     public void Configure(EntityTypeBuilder<CompanyCustomer> builder)
     {
-        builder.ToTable("CompanyCustomers");
-
-        builder.HasKey(co => co.CustomerId);
-
         builder.Property(co => co.CompanyName)
-            .IsRequired()
             .HasMaxLength(200);
 
         builder.HasIndex(co => co.CompanyName)

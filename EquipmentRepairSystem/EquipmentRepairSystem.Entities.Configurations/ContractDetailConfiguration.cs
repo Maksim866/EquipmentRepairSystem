@@ -29,6 +29,10 @@ public class ContractDetailConfiguration : IEntityTypeConfiguration<ContractDeta
         builder.HasIndex(cd => cd.ContractDate)
             .HasDatabaseName("IX_ContractDetails_ContractDate");
 
+        builder.Property(cd => cd.MalfunctionDescription)
+            .IsRequired()
+            .HasMaxLength(1000);
+
         builder.HasOne(cd => cd.Customer)
             .WithMany()
             .HasForeignKey(cd => cd.CustomerId)
@@ -40,7 +44,7 @@ public class ContractDetailConfiguration : IEntityTypeConfiguration<ContractDeta
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasMany(cd => cd.ContractEquipmentItems)
-            .WithOne(cei => cei.ContractDetail)
+            .WithOne()
             .HasForeignKey(cei => cei.ContractDetailId)
             .OnDelete(DeleteBehavior.Cascade);
 

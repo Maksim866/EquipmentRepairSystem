@@ -1,11 +1,11 @@
 namespace EquipmentRepairSystem.Entities;
 
-public class IndividualCustomer
+public class IndividualCustomer : Customer
 {
     /// <summary>
     /// Имя заказчика (заполняется для физического лица или ИП)
     /// </summary>
-    public string FirstName { get; set; } = null!;
+    public string FirstName { get; set; } = string.Empty;
 
     /// <summary>
     /// Отчество заказчика (при наличии)
@@ -15,15 +15,5 @@ public class IndividualCustomer
     /// <summary>
     /// Фамилия заказчика (заполняется для физического лица или ИП)
     /// </summary>
-    public string LastName { get; set; } = null!;
-
-    /// <summary>
-    /// Идентификатор заказчика, связанного с физическим лицом или ИП
-    /// </summary>
-    public Guid CustomerId { get; set; }
-
-    /// <summary>
-    /// Связь с сущностью CustomerInfo
-    /// </summary>
-    public CustomerInfo CustomerInfo { get; set; } = null!;
+    public string LastName { get; set; } = string.Empty;
 }
