@@ -2,7 +2,6 @@ using EquipmentRepairSystem.Dal.Contracts;
 
 namespace EquipmentRepairSystem.Entities;
 
-
 /// <summary>
 /// Реквизиты договора
 /// </summary>
@@ -19,6 +18,11 @@ public class ContractDetail : BaseAuditEntity
     public DateTimeOffset ContractDate { get; set; }
 
     /// <summary>
+    /// Описание неисправности со слов заказчика
+    /// </summary>
+    public string MalfunctionDescription { get; set; } = string.Empty;
+
+    /// <summary>
     /// Внешний ключ на заказчика
     /// </summary>
     public Guid CustomerId { get; set; }
@@ -26,7 +30,7 @@ public class ContractDetail : BaseAuditEntity
     /// <summary>
     /// Навигационное свойство на заказчика
     /// </summary>
-    public CustomerInfo? Customer { get; set; }
+    public Customer? Customer { get; set; }
 
     /// <summary>
     /// Внешний ключ на приёмщика

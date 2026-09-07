@@ -21,7 +21,7 @@ public class ReceiverInfo : BaseAuditEntity
     /// <summary>
     /// Отчество приёмщика (при наличии)
     /// </summary>
-    public string MiddleName { get; set; } = string.Empty;
+    public string? MiddleName { get; set; }
 
     /// <summary>
     /// Должность приёмщика

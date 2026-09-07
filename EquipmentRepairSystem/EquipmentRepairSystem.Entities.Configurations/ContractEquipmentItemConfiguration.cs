@@ -20,6 +20,7 @@ public class ContractEquipmentItemConfiguration : IEntityTypeConfiguration<Contr
             .IsRequired();
 
         builder.Property(cei => cei.SerialNumber)
+            .IsRequired()
             .HasMaxLength(100);
 
         builder.HasIndex(cei => cei.SerialNumber)

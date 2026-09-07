@@ -8,7 +8,7 @@ public class ContractEquipmentItem : BaseAuditEntity
 {
     /// <summary>
     /// Порядковый номер строки перечня
-    /// </summary>
+    /// </summary> 
     public int SequenceNumber { get; set; }
 
     /// <summary>
@@ -25,11 +25,6 @@ public class ContractEquipmentItem : BaseAuditEntity
     /// Внешний ключ на договор
     /// </summary>
     public Guid ContractDetailId { get; set; }
-
-    /// <summary>
-    /// Навигационное свойство на договор
-    /// </summary>
-    public ContractDetail? ContractDetail { get; set; }
 
     /// <summary>
     /// Внешний ключ на модель оборудования из справочника
